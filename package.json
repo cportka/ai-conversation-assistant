@@ -1,0 +1,28 @@
+{
+  "name": "AI-Conversation-Subtitles",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "./coverage",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!**/node_modules/**"
+    ]
+  }
+}
