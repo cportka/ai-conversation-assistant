@@ -1,7 +1,20 @@
-const mic = require('mic');
-const { transcribeAudio } = require('./whisperApi'); // or local whisper runner
+// import mic from 'mic';
+// import { transcribeAudio } from './whisperApi'; // or local whisper runner
 
-function startTranscription(callback) {
+export function startTranscription(callback) {
+  // Mock implementation of the microphone stream
+ const texts = ['hello?', 'how are you?', 'I am fine.', 'what about you?', 'goodbye!'];
+
+  let index = 0;
+  while (true) {
+    setTimeout(() => {
+      (index >= texts.length) ? index = 0 : index++;
+      const text = texts[index];
+      callback(text);
+    }, 5000); // in milliseconds
+  }
+
+  /*
   const microphone = mic({
     rate: '16000',
     channels: '1',
@@ -15,11 +28,7 @@ function startTranscription(callback) {
     if (text) {
       callback(text);
     }
-  }); 
-
+  });
   microphone.start();
+  */
 }
-
-module.exports = {
-  startTranscription
-};
